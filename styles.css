@@ -16,25 +16,31 @@ header {
 h1 {
     font-weight: 700;
     font-size: 4.1rem;
-    line-height: 4rem;
+    line-height: 5.7rem;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 3.5rem;
 }
 
 h3 {
     font-weight: 700;
     font-size: 1.7rem;
-    line-height: 1.3rem;
+    line-height: 2.28rem;
     letter-spacing: 0.1px;
 }
 
 h4 {
     font-size: 1.4rem;
-    line-height: 1.5rem;
+    line-height: 2.14rem;
 }
 
 h5 {
     font-weight: 700;
     font-size: 1.1rem;
-    line-height: 1.2rem;
+    line-height: 1.7rem;
     letter-spacing: 0.1px;
 }
 
@@ -59,7 +65,7 @@ h5 {
     font-style: normal;
     font-weight: 700;
     font-size: 1.7rem;
-    line-height: 1.6rem;
+    line-height: 2.28rem;
     /* identical to box height, or 133% */
     display: flex;
 
@@ -103,7 +109,7 @@ h5 {
 
 .navbar__label {
     font-weight: 700;
-    line-height: 1.2rem;
+    line-height: 1.7rem;
     height: 100%;
 
     display: flex;
@@ -212,7 +218,7 @@ h5 {
     padding: 15px 40px;
     text-decoration: none;
     font-weight: 700;
-    line-height: 0.9rem;
+    line-height: 1.5rem;
     text-align: center;
     letter-spacing: 0.2px;
 }
@@ -281,13 +287,14 @@ object[data="full-vector.svg"] {
     position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     padding: 0px;
     gap: 30px;
+    align-items: stretch;
 }
 
 .inner-links__card {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -295,7 +302,6 @@ object[data="full-vector.svg"] {
     gap: 20px;
 
     width: 328px;
-    height: 210px;
     background: #FFFFFF;
     box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
     transition: all 0.2s ease-in-out 0s;
@@ -331,8 +337,28 @@ object[data="full-vector.svg"] {
     background-image: url(ChatsCircle.svg);
 }
 
-.divider {
+.inner-links .divider {
     width: 50px;
     height: 2px;
     background: #E74040;
+}
+
+.about-card .div {
+    width: 2px;
+    flex: 1;
+    height: 100px;
+    background: #E74040;
+}
+
+.about-block {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+
+.about-card {
+    padding: 0px;
+    gap: 35px;
+    display: flex;
+    flex-direction: row;
 }
