@@ -17,100 +17,217 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="navbar">
-                <div class="brand-name">Суперфахівець</div>
-                <div class="navbar__nav">
-                    <div class="navbar__btn">
-                        <a class="navbar__label" href="#">Головна</a>
-                    </div>
-                    <div class="navbar__btn dropdown">
-                        <div class="navbar__label" onclick="toggle(this);">Новини</div>
-                        <div class="dropdown-content">
-                            <a href="#">Центр</a>
-                            <a href="#">Сертифіковане навчання</a>
-                            <a href="#">Сервер Online тестування і сертифікації</a>
-                            <a href="#">Дистанційне навчання</a>
+        <div class="light-gray-bg">
+            <div class="container">
+                <div class="navbar">
+                    <div class="brand-name">Суперфахівець</div>
+                    <div class="navbar__nav">
+                        <div class="navbar__btn">
+                            <a class="navbar__label" href="#">Головна</a>
+                        </div>
+                        <div class="navbar__btn dropdown">
+                            <div class="navbar__label" onclick="toggle(this);">Новини</div>
+                            <div class="dropdown-content">
+                                <a href="#">Центр</a>
+                                <a href="#">Сертифіковане навчання</a>
+                                <a href="#">Сервер Online тестування і сертифікації</a>
+                                <a href="#">Дистанційне навчання</a>
+                            </div>
+                        </div>
+                        <div class="navbar__btn">
+                            <a class="navbar__label" href="#">Події</a>
+                        </div>
+                        <div class="navbar__btn">
+                            <a class="navbar__label" href="#">Де знаходиться офіс?</a>
                         </div>
                     </div>
-
-                    <div class="navbar__btn">
-                        <a class="navbar__label" href="#">Події</a>
-                    </div>
-                    <div class="navbar__btn">
-                        <a class="navbar__label" href="#">Де знаходиться офіс?</a>
-                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container header-logo">
-            <div class="logo">
-                <h5 class="primary-color">Центр Комп'ютерного навчання</h5>
-                <h1 class="text-color">Суперфахівець</h1>
-                <h4 class="slogan second-text-color">Суперфахівець - кращий в Україні комп'ютерний учбовий центр</h4>
-                <div class="logo__btns">
-                    <div class="logo__btn dark"><a href="#">Приєднатися</a></div>
-                    <div class="logo__btn light"><a href="#">Дізнатися більше</a></div>
+            <div class="container header-logo">
+                <div class="logo">
+                    <h5 class="primary-color">Центр Комп'ютерного навчання</h5>
+                    <h1 class="text-color">Суперфахівець</h1>
+                    <h4 class="slogan second-text-color">Суперфахівець - кращий в Україні комп'ютерний учбовий центр
+                    </h4>
+                    <div class="logo__btns">
+                        <div class="logo__btn dark"><a href="#">Приєднатися</a></div>
+                        <div class="logo__btn light"><a href="#">Дізнатися більше</a></div>
+                    </div>
                 </div>
-            </div>
-            <div class="picture">
-                <div class="background"></div>
-                <object data="full-vector.svg"></object>
-                <object data="circle.svg"></object>
-                <object data="vector.svg"></object>
-            </div>
-
-        </div>
-        <div class="container inner-links">
-            <div class="inner-links__card">
-                <div class="circle-section ChalkboardTeacher"></div>
-                <div class='divider'></div>
-                <h3 class="text-color">Про центр</h3>
-            </div>
-            <div class="inner-links__card">
-                <div class="circle-section GraduationCap"></div>
-                <div class='divider'></div>
-                <h3 class="text-color">Наші курси</h3>
-            </div>
-            <div class="inner-links__card">
-                <div class="circle-section ChatsCircle"></div>
-                <div class='divider'></div>
-                <h3 class="text-color">Зв’язатися з нами</h3>
-            </div>
-        </div>
-        <div class="container about-block">
-            <div class="about-card">
-                <h2 class="text-color">Провідний український центр</h2>
-                <div class="div"></div>
-                <div class="paragraph second-text-color">Центр комп'ютерного навчання "Суперфахівець" - провідний центр Україні в області IT- навчання, що є сертифікованим центром навчання Microsoft, 
-                    Золотим партнером Microsoft, авторизованим центром Microsoft Business Solutions і 
-                    авторизованим центром тестування Microsoft Office Specialist.</div>
+                <div class="picture">
+                    <div class="background"></div>
+                    <object data="./media/full-vector.svg"></object>
+                    <object data="./media/circle.svg"></object>
+                    <object data="./media/vector.svg"></object>
+                </div>
             </div>
         </div>
     </header>
-</body>
-<script>
-    /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-    function toggle(btn) {
-        btn.nextElementSibling.classList.toggle("show");
-        btn.classList.toggle("opened")
-    }
+    <div class="container inner-links">
+        <div class="inner-links__card">
+            <div class="circle-section ChalkboardTeacher"></div>
+            <div class='divider'></div>
+            <h3 class="text-color">Про центр</h3>
+        </div>
+        <div class="inner-links__card">
+            <div class="circle-section GraduationCap"></div>
+            <div class='divider'></div>
+            <h3 class="text-color">Наші курси</h3>
+        </div>
+        <div class="inner-links__card">
+            <div class="circle-section ChatsCircle"></div>
+            <div class='divider'></div>
+            <h3 class="text-color">Зв’язатися з нами</h3>
+        </div>
+    </div>
+    <div class="container about-block">
+        <div class="about-card">
+            <h2 class="text-color">Провідний український центр</h2>
+            <div class="divider"></div>
+            <div class="paragraph second-text-color">Центр комп'ютерного навчання <q>Суперфахівець</q> - провідний
+                центр
+                Україні в області IT- навчання, що є сертифікованим центром навчання
+                <a href="https://www.microsoft.com/">Microsoft</a>,
+                Золотим партнером Microsoft, авторизованим центром Microsoft Business Solutions і
+                авторизованим центром тестування Microsoft Office Specialist.
+                <div class="learn-more-btn">
+                    <a href="#" class="primary-color">Дізнатися більше</a>
+                </div>
+            </div>
+        </div>
+        <div class="about-card">
+            <div class="paragraph second-text-color">Учбовий центр пропонує підготовку на статуси
+                <a
+                    href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html">CCNA&reg;</a>,
+                <a
+                    href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/professional/ccnp-enterprise.html">CCNP&reg;</a>
+                і
+                <a
+                    href="https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/200-310-desgn.html">CCDA&reg;</a>
+                по продуктах і рішеннях компанії
+                <a href="https://www.cisco.com/c/en/us/index.html">Cisco&reg;</a>; є провідним учбовим центром по
+                Linux і FreeBSD
+                технологіям в Україні.
+                <div class="learn-more-btn">
+                    <a href="#" class="primary-color">Дізнатися більше</a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <h2 class="text-color">Сертифікаційна підготовка</h2>
+        </div>
+        <div class="about-card">
+            <h2 class="text-color">Фірми партнери</h2>
+            <div class="divider"></div>
+            <div class="paragraph second-text-color"><q>Суперфахівець</q> - перший в Україні Linux Professional
+                Institute
+                Training Partner (LATP) і Novell Certified Linux Engineer, авторизований учбовий центр ASPLinux; має
+                4 авторизації провідних фірм:<br>
+                <a href="https://www.autodesk.com/">Autodesk</a>,
+                <a href="https://www.solidworks.com/ru">SolidWorks</a>,
+                <a href="https://graphisoft.com/">Grafisoft</a> і
+                <a href="https://ascon.ru/">Ascon</a>.<br>
+                Кращий учбовий центр Autodesk в 2006 році, дозволяє пройти навчання на сертифікованих курсах
+                Autodesk по усіх продуктах компанії (AutoCad, Inventor Series, VIZ та ін.).
+                <div class="learn-more-btn">
+                    <a href="#" class="primary-color">Дізнатися більше</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faded-secondary-bg">
+        <div class="container courses">
+            <div>
+                <h6 class="danger-text-color">Центр пропонує</h6>
+                <h2 class="text-color">Курси</h2>
+                <div class="paragraph">по усіх популярних продуктах <a href="https://www.adobe.com/ru/">Adobe</a>
+                </div>
+            </div>
 
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.parentElement || !(event.target.parentElement.classList.contains('dropdown'))) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                    openDropdown.previousElementSibling.classList.remove("opened")
+            <div class="courses__cards">
+                <div class="courses__card">
+                    <img class="courses__logo" alt="Adobe Photoshop logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg">
+                    <div class="courses__label">Adobe Photoshop</div>
+                </div>
+                <div class="courses__card">
+                    <img class="courses__logo" alt="Adobe Illustrator logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg">
+                    <div class="courses__label">Adobe Illustrator</div>
+                </div>
+                <div class="courses__card">
+                    <img class="courses__logo" alt="Adobe InDesign logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/48/Adobe_InDesign_CC_icon.svg">
+                    <div class="courses__label">Adobe InDesign</div>
+                </div>
+                <div class="courses__card">
+                    <img class="courses__logo" alt="Adobe Acrobat logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/42/Adobe_Acrobat_DC_logo_2020.svg">
+                    <div class="courses__label">Adobe Acrobat</div>
+                </div>
+                <div class="courses__card">
+                    <img class="courses__logo" alt="Adobe Premiere logo"
+                        src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg">
+                    <div class="courses__label">Adobe Premiere</div>
+                </div>
+                <div class="courses__card">
+                    <img class="courses__logo" src="./media/page-maker-logo.svg" alt="Adobe PageMaker logo">
+                    <div class="courses__label">Adobe PageMaker</div>
+                </div>
+            </div>
+            <div class="learn-more-btn">
+                <a href="#" class="danger-text-color">Більше курсів Adobe</a>
+            </div>
+            <div class="courses__footer">
+                <h6 class="danger-text-color">Тут</h6>
+                <div class="paragraph">можна записатися на <a href="#">курси Photoshop</a>, <a href="#">курси Cisco</a>,
+                    <a href="#">курси Microsoft</a>, <a href="#">курси Linux</a>, <a href="#">курси AutoCad</a> та <a
+                        href="#">ін.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container feedback">
+        <h6 class="primary-color">Відгуки про сайт направляйте веб-майстрові:</h6>
+        <h3 class="text-color">webmaster@site.com.ua</h3>
+    </div>
+    <footer>
+        <div class="faded-primary-bg">
+            <div class="container near-courses">
+                <h5 class="text-color">Найближчі курси</h5>
+                <div class="near-courses__cards">
+                    <a href="#">PHP</a>
+                    <a href="#">JavaScript</a>
+                    <a href="#">Інші</a>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright">&copy;1991-2021 Центр комп'ютерного навчання <q>Суперфахівець</q>&trade;</div>
+    </footer>
+    <script>
+        /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+        function toggle(btn) {
+            btn.nextElementSibling.classList.toggle("show");
+            btn.classList.toggle("opened")
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.parentElement || !(event.target.parentElement.classList.contains('dropdown'))) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                        openDropdown.previousElementSibling.classList.remove("opened")
+                    }
                 }
             }
         }
-    }
-</script>
+    </script>
+
+</body>
+
 
 </html>

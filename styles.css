@@ -9,8 +9,8 @@
     letter-spacing: 0.2px;
 }
 
-header {
-    background: #FAFAFA;
+body {
+    background-color: #FFFFFF;
 }
 
 h1 {
@@ -44,6 +44,11 @@ h5 {
     letter-spacing: 0.1px;
 }
 
+h6 {
+    font-weight: 700;
+    line-height: 1.71rem;
+}
+
 .slogan {
     width: 496px;
 }
@@ -60,6 +65,21 @@ h5 {
     color: #737373;
 }
 
+.danger-text-color {
+    color: #E74040;
+}
+
+.light-gray-bg {
+    background: #FAFAFA;
+}
+
+.faded-secondary-bg {
+    background: #FFF2F3;
+}
+
+.faded-primary-bg {
+    background: #EFF8ED;
+}
 
 .brand-name {
     font-style: normal;
@@ -236,7 +256,7 @@ h5 {
     border: 1px solid #96BB7C;
 }
 
-.light>a {
+.light a {
     color: #96BB7C;
 }
 
@@ -256,7 +276,7 @@ h5 {
     z-index: 0;
 }
 
-object[data="circle.svg"] {
+object[data*="circle"] {
     position: absolute;
     left: 21.16%;
     right: 71.67%;
@@ -265,7 +285,7 @@ object[data="circle.svg"] {
     z-index: 0;
 }
 
-object[data="vector.svg"] {
+object[data*="vector"] {
     position: absolute;
     left: 14.09%;
     right: 0%;
@@ -274,7 +294,7 @@ object[data="vector.svg"] {
     z-index: 0;
 }
 
-object[data="full-vector.svg"] {
+object[data*="full-vector"] {
     position: absolute;
     left: 14.8%;
     right: 0%;
@@ -326,15 +346,15 @@ object[data="full-vector.svg"] {
 }
 
 .ChalkboardTeacher {
-    background-image: url(ChalkboardTeacher.svg);
+    background-image: url(./media/ChalkboardTeacher.svg);
 }
 
 .GraduationCap {
-    background-image: url(GraduationCap.svg);
+    background-image: url(./media/GraduationCap.svg);
 }
 
 .ChatsCircle {
-    background-image: url(ChatsCircle.svg);
+    background-image: url(./media/ChatsCircle.svg);
 }
 
 .inner-links .divider {
@@ -343,22 +363,164 @@ object[data="full-vector.svg"] {
     background: #E74040;
 }
 
-.about-card .div {
+.about-card {
+    padding: 0px;
+    gap: 35px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: max-content;
+}
+
+.about-card h2,
+.about-card .paragraph {
+    width: 46%;
+}
+
+.about-card h2 {
+    display: flex;
+    align-items: center;
+}
+
+.about-card .divider {
     width: 2px;
-    flex: 1;
-    height: 100px;
     background: #E74040;
+}
+
+.about-card a {
+    color: #96BB7C;
+}
+
+.about-card a:hover {
+    color: #E77C40;
 }
 
 .about-block {
     display: flex;
     flex-direction: column;
     height: max-content;
+    padding: 50px 0;
+    gap: 50px;
 }
 
-.about-card {
-    padding: 0px;
-    gap: 35px;
+.learn-more-btn {
+    margin-top: 35px;
+}
+
+.learn-more-btn a {
+    font-weight: 700;
+    line-height: 1.7rem;
+}
+
+.learn-more-btn a::after {
+    content: '';
+    display: inline-block;
+    margin-left: 10px;
+    width: 9px;
+    height: 16px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 9px 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+.about-block .learn-more-btn a::after {
+    background-image: url(./media/icon-arrow-next-green.svg);
+}
+
+.learn-more-btn a:hover::after {
+    background-image: url(./media/icon-arrow-next-orange.svg);
+    margin-left: 5px;
+}
+
+.courses {
+    background: #FFF2F3;
+    background-size: 100% 1vw;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.courses a {
+    color: #E74040;
+}
+
+.courses a:hover {
+    color: #E77C40;
+}
+
+.courses__cards {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 45px;
+    width: 100%;
+    justify-content: center;
+}
+
+.courses__card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 70px;
+    background-color: #fff;
+    width: 320px;
+    filter: drop-shadow(0px 13px 19px rgba(0, 0, 0, 0.07));
+}
+
+.courses__logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.courses .learn-more-btn a::after {
+    background-image: url(./media/icon-arrow-next-red.svg);
+}
+
+.courses .learn-more-btn {
+    text-align: center;
+}
+
+.courses .learn-more-btn a:hover {
+    color: #E77C40;
+}
+
+
+.feedback {
+    padding: 50px 0;
+}
+
+.near-courses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.near-courses a {
+    font-weight: 700;
+    color: #737373;
+}
+
+.near-courses a:hover {
+    color: #2D4059;
+}
+
+.near-courses__cards {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+footer *{
+    font-weight: 700;
+    color: #737373;
+}
+
+footer .copyright {
+    padding: 25px 0;
 }
