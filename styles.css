@@ -1,23 +1,82 @@
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     margin: 0;
     padding: 0;
-    letter-spacing: 0.2px;
+    letter-spacing: 0;
 }
 
-body {
-    background-color: #FFFFFF;
+.background {
+    background: url(https://c1.wallpaperflare.com/path/658/192/865/the-sky-red-blue-cloud-0377860ecb0cc300ee4e38ec5c54a9be.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.blur {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(25px);
+}
+
+.body.container {
+    width: 81%;
+    background-color: #fff;
+    margin: 8% 9%;   
+}
+
+.bold {
+    font-weight: 800px;
 }
 
 h1 {
-    font-weight: 700;
-    font-size: 4.1rem;
-    line-height: 5.7rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
 }
+
+h3 {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.35rem;
+}
+.name-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.name-bar>div:not(:last-child) {
+    border-right: 1px solid;
+    border-image: 
+    linear-gradient(
+      to top, 
+      rgba(219, 218, 223, 0.18), 
+      rgba(219, 218, 223, 1)
+    ) 1 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*ффффффффффффффффффф*/
+
 
 h2 {
     font-weight: 700;
@@ -25,12 +84,7 @@ h2 {
     line-height: 3.5rem;
 }
 
-h3 {
-    font-weight: 700;
-    font-size: 1.7rem;
-    line-height: 2.28rem;
-    letter-spacing: 0.1px;
-}
+
 
 h4 {
     font-size: 1.4rem;
@@ -263,17 +317,6 @@ h6 {
 .picture {
     position: relative;
     width: 50%;
-}
-
-.background {
-    position: absolute;
-    width: 100%;
-    height: 626.4px;
-    right: 0;
-    top: -50px;
-    border-radius: 50px;
-    background: linear-gradient(90deg, rgba(255, 242, 243, 0) 6.52%, rgba(255, 171, 113, 0.31) 100%);
-    z-index: 0;
 }
 
 object[data*="circle"] {
@@ -518,7 +561,7 @@ object[data*="full-vector"] {
     gap: 40px;
 }
 
-footer *{
+footer * {
     font-weight: 700;
     color: #737373;
 }
