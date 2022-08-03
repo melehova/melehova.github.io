@@ -22,15 +22,12 @@
 .material-symbols-rounded.prev,
 .material-symbols-rounded.next {
     color: #fff;
-    font-variation-settings:
-    'opsz' 20;
+    font-size: 20px;
 }
 
 .material-symbols-rounded.play {
     color: #fff;
-    font-variation-settings:
-    'opsz' 45;
-    font-size: 45;
+    font-size: 45px;
 }
 
 .material-symbols-rounded:hover,
@@ -121,8 +118,7 @@ header>div>div:not(:last-child) {
 }
 
 .search-bar .material-symbols-rounded {
-    font-variation-settings:
-        'opsz' 18;
+    font-size: 19px;
     color: #444;
     cursor: text;
 }
@@ -165,10 +161,22 @@ header>div>div:not(:last-child) {
     text-transform: capitalize;
 }
 
+.controls {
+    box-sizing: border-box;
+    padding: 4px 4%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
 .content-info {
     gap: 6px;
     padding: 28px 0 28px 28%;
 }
+
+.left-controls {
+    gap: 30px;
+}
+
 /*ффффффффффффффффффф*/
 
 
