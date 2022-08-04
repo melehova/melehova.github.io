@@ -25,10 +25,21 @@
     cursor: text;
 }
 
+.material-symbols-rounded.add-circle:hover,
+.material-symbols-rounded.add-circle:active,
+.current-album .material-symbols-rounded:hover,
+.current-album .material-symbols-rounded:active {
+    color: #888;
+}
+
 .material-symbols-rounded.prev,
 .material-symbols-rounded.next {
     color: #fff;
     font-size: 20px;
+}
+
+.current-album .material-symbols-rounded {
+    color: #c1c1c1;
 }
 
 .material-symbols-rounded.play {
@@ -46,6 +57,11 @@
 .material-symbols-rounded.next:active,
 .right-controls .material-symbols-rounded:active {
     color: #F0F0F0;
+}
+
+.material-symbols-rounded.add-circle {
+    color: #BDBEC0;
+    font-size: 20px;
 }
 
 .right-controls .material-symbols-rounded {
@@ -80,8 +96,9 @@
     padding: 0;
 }
 
-.bold {
+.genre-name>h3 {
     font-weight: 800;
+    font-size: 1rem;
 }
 
 h1 {
@@ -92,10 +109,11 @@ h1 {
 }
 
 h3 {
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 400;
+    font-size: 1.14rem;
     line-height: 1.35rem;
     color: #444444;
+    text-transform: uppercase;
 }
 
 .name-bar,
@@ -281,6 +299,74 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
     outline: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.side-bar.left {
+    /* width: 40%; */
+    width: 20%;
+}
+
+.nav-side-bar {
+    background: #F1F2F4;
+    padding: 25px 0;
+    gap: 36px;
+}
+
+.nav-side__header {
+    margin: 0 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D0D0D8;
+}
+
+.nav-side__content-item {
+    border: solid rgba(0, 0, 0, 0);
+    border-width: 2px 0px;
+    transition: all 0.1s ease-in-out;
+    padding: 10px 30px;
+    color: #666666;
+    font-size: 0.85rem;
+    line-height: 1.14rem;
+    letter-spacing: 0.3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.nav-side__content-item:hover,
+.nav-side__content-item:active,
+.nav-side__content-item.active {
+    border-width: 2px 0px;
+    background: #DFE2E9;
+    border-color: #DFE2E9;
+    border-style: solid;
+    outline: none;
+
+    font-weight: 700;
+    color: #444442;
+}
+
+.current-album {
+    padding: 15px 29px;
+    gap: 10px;
+    background: #F9FAFC;
+    border-top: 1px solid #D0D1D6;
+}
+
+.current-album__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 0.85rem;
+    line-height: 1.14rem;;
+    letter-spacing: 0.2px;
+
+    color: #6E706F;
+}
+
+.current-album__icon {
+    border: 1px solid #D1D1D1;
+    height: 27px;
+    width: 27px;
 }
 
 @media screen and (max-width: 992px) {
