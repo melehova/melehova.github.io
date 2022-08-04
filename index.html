@@ -15,13 +15,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>♫ God Is an Astronaut</title>
+    <link rel="icon" type="image/x-icon" href="media/musical-note.ico">
+    <title>God Is an Astronaut</title>
 </head>
 
 <body>
     <div class="body container">
-        <header class="d-flex flex-row justify-content-between">
-            <div class="name-bar d-flex flex-row justify-content-start align-items-center">
+        <header class="d-flex justify-content-between">
+            <div class="name-bar d-flex justify-content-start align-items-center">
                 <div class="brand-name">
                     <h1>Music Archive</h1>
                 </div>
@@ -29,19 +30,19 @@
                     <h3 class="bold">Post Rock</h3>
                 </div>
             </div>
-            <div class="nav-bar d-flex flex-row justify-content-end align-items-center">
+            <div class="nav-bar d-flex justify-content-end align-items-center">
                 <div class="layout-bar d-flex flex-row justify-content-center align-content-center">
-                    <span class="material-symbols-rounded">
+                    <span class="material-symbols-rounded" title="View Headline">
                         view_headline
                     </span>
-                    <span class="material-symbols-rounded">
+                    <span class="material-symbols-rounded" title="View List">
                         view_list
                     </span>
-                    <span class="material-symbols-rounded active">
+                    <span class="material-symbols-rounded active" title="View Module">
                         view_module
                     </span>
                 </div>
-                <div class="search-bar d-flex flex-row justify-content-center align-content-center">
+                <div class="search-bar d-flex justify-content-center align-items-center">
                     <label for="search-input" class="material-symbols-rounded">
                         search
                     </label>
@@ -50,22 +51,43 @@
             </div>
         </header>
         <div class="player d-flex flex-column justify-content-between">
-            <div class="content-info d-flex flex-column align-content-center">
+            <div class="content-info d-flex flex-column align-items-start">
                 <div class="title">God Is an Astronaut</div>
                 <div class="subtitle">Infinite Horizons</div>
             </div>
-            <div class="controls d-flex justify-content-between">
-                <div class="left-controls d-flex flex-row justify-content-center align-items-center">
-                    <span class="material-symbols-rounded prev">
+            <div class="controls d-flex flex-md-row flex-wrap justify-content-center align-content-center">
+
+                <div class="left-controls d-flex justify-content-center align-items-center">
+                    <span class="material-symbols-rounded prev" title="Previous">
                         skip_previous
                     </span>
-                    <span class="material-symbols-rounded play">
+                    <span class="material-symbols-rounded play" title="Play">
                         play_circle
                     </span>
-                    <span class="material-symbols-rounded next">
+                    <span class="material-symbols-rounded next" title="Next">
                         skip_next
                     </span>
                 </div>
+                <div class="middle-controls d-flex align-items-center">
+                    <input type="range" id="player-slider" value="50" min="0" max="270"
+                        oninput="handleInputChange(this)">
+                </div>
+                <div class="right-controls d-flex justify-content-center align-items-center">
+                    <div class="sound-bar d-flex justify-content-center align-items-center">
+                        <span class="material-symbols-rounded" title="Sound">
+                            volume_up
+                        </span>
+                        <input type="range" id="sound-slider" value="50" min="0" max="100"
+                            oninput="handleInputChange(this)">
+                    </div>
+                    <span class="material-symbols-rounded" title="Sound">
+                        repeat
+                    </span>
+                    <span class="material-symbols-rounded" title="Sound">
+                        shuffle
+                    </span>
+                </div>
+
             </div>
         </div>
     </div>
@@ -75,7 +97,20 @@
     <div class="background">
         <div class="blur"></div>
     </div>
+    <script>
+        window.onload = (event) => {
+            const playerSlider = document.querySelector('#player-slider')
+            document.getElementsByClassName('background')[0].blur();
+            handleInputChange(playerSlider);
+        };
 
+        function handleInputChange(slider) {
+            const min = slider.min
+            const max = slider.max
+            const val = slider.value
+            slider.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+        }
+    </script>
 </body>
 
 
