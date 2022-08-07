@@ -302,7 +302,6 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 }
 
 .side-bar.left {
-    /* width: 40%; */
     width: 20%;
 }
 
@@ -357,7 +356,8 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     text-overflow: ellipsis;
 
     font-size: 0.85rem;
-    line-height: 1.14rem;;
+    line-height: 1.14rem;
+    ;
     letter-spacing: 0.2px;
 
     color: #6E706F;
@@ -368,6 +368,93 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
     height: 27px;
     width: 27px;
 }
+
+.music-list {
+    padding: 30px;
+    gap: 30px;
+    height: max-content;
+    overflow-y: scroll;
+    max-height: 741px;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #CDCDCD;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #A1A1A1;
+}
+
+.music-list__album * {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.music-list__album {
+    gap: 11px;
+    width: 124px;
+    height: 169px;
+    margin: 0;
+}
+
+.music-list__icon {
+    width: 124px;
+    height: 124px;
+    object-fit: cover;
+}
+
+h6 {
+    font-weight: 600;
+    font-size: 0.85rem;
+    line-height: 1.14rem;
+    letter-spacing: 0.2px;
+
+    color: #444444;
+    margin-bottom: 0;
+}
+
+.music-list__album-title,
+.nav-side__album-title {
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+    letter-spacing: 0.2px;
+
+    color: #878787;
+}
+
+.music-list__info {
+    gap: 2px;
+}
+
+.nav-side__content-item strong {
+    font-weight: 600;
+}
+
+.nav-side__content-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+}
+
+.nav-side__content-item.music {
+    gap: 10px;
+    padding: 10px 30px;
+}
+
 
 @media screen and (max-width: 992px) {
     .player {
@@ -384,5 +471,11 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 
     .right-controls {
         width: 30%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .side-bar.left {
+        width: 100%;
     }
 }
