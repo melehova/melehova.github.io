@@ -22,21 +22,16 @@ Home tasks from course
 #### Завдання No3
 
 Створити структуру типу `Кільцевий масив`, яка буде створюватися так 
-
 ```js
 let circledArray = new circleArray()
 ```
-
 Елементи створюються так
-
 ```js
 circledArray.add("Київ");
 circledArray.add("Харків");
 circledArray.add("Херсон");
 ```
-
 При наступних зверненнях 
-
 ```js
 circledArray.get(4)
 ```
