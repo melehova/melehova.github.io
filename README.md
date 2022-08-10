@@ -1,3 +1,3 @@
 # melehova.github.io
 
-## Home tasks from course
+Home tasks from course
