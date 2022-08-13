@@ -5,4 +5,5 @@ const searchWordBySub = (string) => {
     })
 }
 
+
 console.log(searchWordBySub('Ми знаємо, що монохромний колір – це градації сірого'))
