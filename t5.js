@@ -1,5 +1,5 @@
 const getNames = (string) => {
-    var regex = RegExp(/\w+, \w+/g);
+    let regex = RegExp(/\w+, \w+/g);
     let result = ''
     string.match(regex).forEach(name => {
         result += `${name.split(', ')[1]} ${name.split(', ')[0]}\n` // replace

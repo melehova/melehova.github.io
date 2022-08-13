@@ -1,5 +1,5 @@
 const searchWordBySub = (string) => {
-    var regex = RegExp("хром");
+    let regex = RegExp("хром");
     return string.split(" ").find((elem, index) => {
         return regex.test(elem);
     })
