@@ -1,22 +1,53 @@
 ﻿<!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Таблица умножения</title>
-<style type="text/css">
-td{padding:10px;border:1px solid #369;}
-</style>
-<script type="text/javascript">
-var cell = 10;
-var row = 10;
 
-function createDOM() {
-	/* Создайте в элементе div таблицу с помощью методов DOM */
-}
-</script>
+<head>
+	<meta charset="utf-8">
+	<title>Таблица умножения</title>
+	<style type="text/css">
+		td {
+			padding: 10px;
+			border: 1px solid #369;
+		}
+	</style>
+	<script type="text/javascript">
+		var cell = 10;
+		var row = 10;
+
+		function createDOM() {
+			/* Создайте в элементе div таблицу с помощью методов DOM */
+			let tableSource =
+			{
+				thead: ['Month', 'Savings'],
+				tbody: [
+					['January', '$100'],
+					['February', '$80'],
+					['Sum', '$180']
+				]
+			}
+
+			const table = document.createElement("TABLE")
+			let theadRow = table.createTHead().insertRow()
+			tableSource['thead'].forEach(elem => {
+				let th = document.createElement("th")
+				th.innerHTML = elem
+				theadRow.appendChild(th)
+			})
+			let tbody = table.createTBody()
+			tableSource['tbody'].forEach(row => {
+				let tr = tbody.insertRow()
+				row.forEach(elem => {
+					tr.insertCell().innerHTML = elem
+				})
+			})
+			document.getElementById('d').appendChild(table)
+		}
+	</script>
 </head>
+
 <body>
-<a href="javascript:createDOM();">Создать таблицу с помощью методов DOM</a><br>
-<div id="d"></div>
+	<a href="javascript:createDOM();">Создать таблицу с помощью методов DOM</a><br>
+	<div id="d"></div>
 </body>
+
 </html>
