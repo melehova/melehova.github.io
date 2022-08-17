@@ -18,6 +18,17 @@
 				- изменить цвет рамки пустого поля на красный
 				- данные не отправлять!
 		*/
+		const checkForm = () => {
+			const inputs = document.forms.myForm.getElementsByTagName('input')
+			let submit = true
+			for (let index in inputs) {
+				if (index < inputs.length && !inputs[index].value) {
+					submit = false
+					inputs[index].style.border = 'red solid'
+				}
+			}
+			submit ? document.forms.myForm.submit() : window.setTimeout("alert('All fields must be filled!')", 10);
+		}
 		
 	</script>	
 </head>
