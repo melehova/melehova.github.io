@@ -1,61 +1,18 @@
 import React, { Component } from "react";
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-const AD = {
-    ID: 0,
-    title: 'Шпагат Macrametr 4 мм, 100 ниток',
-    prefered: true,
-    image: './assets/image.png',
-    colors: [
-        {
-            id: 0,
-            hex: '696837'
-        },
-        {
-            id: 1,
-            hex: '81292F'
-        },
-        {
-            id: 2,
-            hex: 'D8C1AA'
-        },
-        {
-            id: 3,
-            hex: 'EED53A'
-        },
-        {
-            id: 4,
-            hex: '0395AF'
-        },
-        {
-            id: 5,
-            hex: 'F09482'
-        },
-        {
-            id: 6,
-            hex: '5484ac'
-        },
-        {
-            id: 7,
-            hex: 'dfdfdf'
-        },
-        {
-            id: 8,
-            hex: '5d5d5d'
-        }
-    ],
-    price: 40,
-}
+import currencyFormat from "./currencyFomat";
 
 export default class Ad extends Component {
-    constructor() {
+    constructor({ props }) {
         super()
         this.state = {
-            collapsedColors: AD.colors.slice(0, 4),
+            ...props,
+            collapsedColors: props.colors.slice(0, 4),
         }
         this.expandColors = this.expandColors.bind(this)
+        this.togglePrefered = this.togglePrefered.bind(this)
+
     }
     componentDidMount() {
         let circles = document.getElementsByClassName('ad__color-circle')
@@ -63,30 +20,48 @@ export default class Ad extends Component {
             circle.style.backgroundColor = '#' + circle.dataset.color
     }
 
+    componentDidUpdate() {
+        this.componentDidMount()
+    }
+
     expandColors() {
-        this.setState({collapsedColors: AD.colors})
+        this.setState({ collapsedColors: this.state.colors })
+    }
+
+    togglePrefered() {
+        this.setState({ prefered: !this.state.prefered })
+        /* POST data to back */
     }
 
     render() {
+        console.log('inside render', this.state)
         return (
             <div className="container">
                 <div className="ad">
                     <div className="ad__btn-bar">
-                        <div className="ad__btn-favourite"></div>
-                        <div className="ad__btn-more"></div>
+                        <div
+                            className={this.state.prefered ? 'ad__btn-favourite active' : 'ad__btn-favourite'}
+                            title={this.state.prefered ? "Прибрати з обраних" : "Додати в обрані"}
+                            onClick={this.togglePrefered}></div>
+                        <div className="ad__btn-more" title="Більше"></div>
                     </div>
-                    <img className='ad__img' src={AD.image} alt={AD.title}></img>
+                    <img className='ad__img' src={this.state.image} alt={this.state.title}></img>
                     <div className="ad__info">
-                        <div className="ad__title">{AD.title}</div>
+                        <div className="ad__title">{this.state.title}</div>
                         <div className="ad__color-bar">
                             {this.state.collapsedColors.map(color => {
-                                if (color.id < this.state.collapsedColors.length - 1)
-                                    return (<span className='ad__color-circle' key={color.id} data-color={color.hex}></span>)
-                                else
-                                    return (<span className="ad__color-expand" onClick={this.expandColors}>+{AD.colors.length - 4}</span>)
+                                return (<span className='ad__color-circle' key={color.id} data-color={color.hex} title={color.name}></span>)
                             })}
+                            {(this.state.collapsedColors.length !== this.state.colors.length) &&
+                                <span className="ad__color-expand" onClick={this.expandColors} title='Усі кольори'>+{this.state.colors.length - this.state.collapsedColors.length}</span>
+                            }
                         </div>
-                        <div className="ad__price">40</div>
+
+                        <div className="ad__price">
+                            {this.state.oldPrice &&
+                                <span className="ad__old-price">{currencyFormat(this.state.oldPrice.value, 'UAH', 'symbol')}</span>
+                            }
+                            {currencyFormat(this.state.price.value, 'UAH', 'symbol')}</div>
                     </div>
                     <div className="ad__btn-buy">До кошика</div>
                 </div>

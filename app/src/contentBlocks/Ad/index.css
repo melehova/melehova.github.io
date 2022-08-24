@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 * {
     margin: 0;
@@ -35,16 +36,21 @@ body {
     width: 185px;
 }
 
-.ad__btn-bar > *{
+.ad__btn-bar>* {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 16px 16px;
     height: 16px;
     width: 16px;
+    cursor: pointer;
 }
 
 .ad__btn-favourite {
     background-image: url(../../../public/assets/icons/heart-empty-gradient.svg);
+}
+
+.ad__btn-favourite.active {
+    background-image: url(../../../public/assets/icons/heart-filled-gradient.svg);
 }
 
 .ad__btn-more {
@@ -66,7 +72,7 @@ body {
     gap: 15px;
 }
 
-.ad__info *{
+.ad__info * {
     white-space: pre-line;
     text-align: left;
 }
@@ -82,4 +88,81 @@ body {
     border-radius: 50%;
     color: red;
     display: inline-block;
+}
+
+.ad__color-expand {
+    cursor: pointer;
+}
+
+.ad__price {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: #424242;
+}
+
+.ad__old-price {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    text-decoration-line: line-through;
+    padding-right: 10px;
+
+    color: #424242;
+
+}
+
+.ad__btn-buy {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    gap: 10px;
+
+    width: 187px;
+    height: 47px;
+
+    border: 1px solid #BDBDBD;
+    border-radius: 46px;
+
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+
+    background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.ad__btn-buy::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    background-image: url(../../../public/assets/icons/basket-gradient.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ad__btn-buy:focus,
+.ad__btn-buy:active,
+.ad__btn-buy:hover {
+    background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+    -webkit-background-clip: inherit;
+    -webkit-text-fill-color: inherit;
+    background-clip: inherit;
+    text-fill-color: inherit;
+    color: white;
+}
+
+.ad__btn-buy:focus::before,
+.ad__btn-buy:active::before,
+.ad__btn-buy:hover::before {
+    background-image: url(../../../public/assets/icons/basket-white.svg);
+
 }
