@@ -59,7 +59,7 @@ export default class Ad extends Component {
                         {this.state.oldPrice &&
                             <span className="ad__old-price">{currencyFormat(this.state.oldPrice.value, 'UAH', 'symbol')}</span>
                         }
-                        {currencyFormat(this.state.price.value, 'UAH', 'symbol')}</div>
+                        <span className={this.state.oldPrice ? "new" : ""}>{currencyFormat(this.state.price.value, 'UAH', 'symbol')}</span></div>
                 </div>
                 <div className="ad__btn-buy">До кошика</div>
             </div>
