@@ -1,16 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 105%;
-}
-
 body {
     background-color: #FAF9F9;
 }
@@ -22,6 +9,7 @@ body {
     align-items: center;
     height: max-content;
     width: 245px;
+    height: 422px;
     padding: 28px 20px;
     gap: 15px;
     background: #FFFFFF;
@@ -60,7 +48,7 @@ body {
 .ad__img {
     width: 200px;
     height: 150px;
-    object-fit: cover;
+    object-fit: contain;
     overflow: hidden;
 }
 
@@ -80,6 +68,32 @@ body {
 .ad__color-bar {
     display: flex;
     gap: 3px;
+    width: 100%;
+    overflow: auto hidden;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    height: max-content;
+    scrollbar-width: thin;
+}
+
+/* width */
+::-webkit-scrollbar {
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #BDBDBD;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .ad__color-circle {
@@ -88,10 +102,14 @@ body {
     border-radius: 50%;
     color: red;
     display: inline-block;
+    flex: 0 0 auto;
 }
 
 .ad__color-expand {
     cursor: pointer;
+    line-height: 1rem;
+    font-size: 1rem;
+    height: 17px;
 }
 
 .ad__price {

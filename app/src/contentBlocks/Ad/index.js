@@ -34,37 +34,34 @@ export default class Ad extends Component {
     }
 
     render() {
-        console.log('inside render', this.state)
         return (
-            <div className="container">
-                <div className="ad">
-                    <div className="ad__btn-bar">
-                        <div
-                            className={this.state.prefered ? 'ad__btn-favourite active' : 'ad__btn-favourite'}
-                            title={this.state.prefered ? "Прибрати з обраних" : "Додати в обрані"}
-                            onClick={this.togglePrefered}></div>
-                        <div className="ad__btn-more" title="Більше"></div>
-                    </div>
-                    <img className='ad__img' src={this.state.image} alt={this.state.title}></img>
-                    <div className="ad__info">
-                        <div className="ad__title">{this.state.title}</div>
-                        <div className="ad__color-bar">
-                            {this.state.collapsedColors.map(color => {
-                                return (<span className='ad__color-circle' key={color.id} data-color={color.hex} title={color.name}></span>)
-                            })}
-                            {(this.state.collapsedColors.length !== this.state.colors.length) &&
-                                <span className="ad__color-expand" onClick={this.expandColors} title='Усі кольори'>+{this.state.colors.length - this.state.collapsedColors.length}</span>
-                            }
-                        </div>
-
-                        <div className="ad__price">
-                            {this.state.oldPrice &&
-                                <span className="ad__old-price">{currencyFormat(this.state.oldPrice.value, 'UAH', 'symbol')}</span>
-                            }
-                            {currencyFormat(this.state.price.value, 'UAH', 'symbol')}</div>
-                    </div>
-                    <div className="ad__btn-buy">До кошика</div>
+            <div className="ad">
+                <div className="ad__btn-bar">
+                    <div
+                        className={this.state.prefered ? 'ad__btn-favourite active' : 'ad__btn-favourite'}
+                        title={this.state.prefered ? "Прибрати з обраних" : "Додати в обрані"}
+                        onClick={this.togglePrefered}></div>
+                    <div className="ad__btn-more" title="Більше"></div>
                 </div>
+                <img className='ad__img' src={this.state.image} alt={this.state.title}></img>
+                <div className="ad__info">
+                    <div className="ad__title">{this.state.title}</div>
+                    <div className="ad__color-bar">
+                        {this.state.collapsedColors.map(color => {
+                            return (<span className='ad__color-circle' key={color.id} data-color={color.hex} title={color.name}></span>)
+                        })}
+                        {(this.state.collapsedColors.length !== this.state.colors.length) &&
+                            <span className="ad__color-expand" onClick={this.expandColors} title='Усі кольори'>+{this.state.colors.length - this.state.collapsedColors.length}</span>
+                        }
+                    </div>
+
+                    <div className="ad__price">
+                        {this.state.oldPrice &&
+                            <span className="ad__old-price">{currencyFormat(this.state.oldPrice.value, 'UAH', 'symbol')}</span>
+                        }
+                        {currencyFormat(this.state.price.value, 'UAH', 'symbol')}</div>
+                </div>
+                <div className="ad__btn-buy">До кошика</div>
             </div>
         );
     }

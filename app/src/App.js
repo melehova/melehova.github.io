@@ -1,5 +1,7 @@
-import Ad from './contentBlocks/Ad';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AdsBlock from './contentBlocks/AdsBlock';
+
 
 const Ads = [
   {
@@ -64,7 +66,7 @@ const Ads = [
     }
   },
   {
-    ID: 0,
+    ID: 1,
     title: 'Шпагат джутовий Сібшнур 500 м',
     prefered: false,
     image: './assets/image1.png',
@@ -82,7 +84,7 @@ const Ads = [
       {
         id: 2,
         hex: '9D856B',
-        name: 'Ерроутаун '
+        name: 'Ерроутаун'
       },
     ],
     oldPrice: {
@@ -93,16 +95,224 @@ const Ads = [
       value: 300,
       currencyCode: 'UAH'
     }
-  }
+  },
+  {
+    ID: 2,
+    title: 'Пряжа Norway 100гр - 105м YarnArt',
+    prefered: false,
+    image: './assets/image6.png',
+    colors: [
+      {
+        id: 0,
+        hex: '0B8243',
+        name: 'Салем'
+      },
+      {
+        id: 1,
+        hex: '1422B7',
+        name: 'Перський блакитний'
+      },
+      {
+        id: 2,
+        hex: '44AFDF',
+        name: 'Піктон блакитний '
+      },
+      {
+        id: 3,
+        hex: 'E7D361',
+        name: 'Конфетті'
+      },
+      {
+        id: 4,
+        hex: 'EF6A47',
+        name: 'Спалена Сієнна'
+      },
+      {
+        id: 5,
+        hex: 'F768E2',
+        name: 'Рожевий фламінго'
+      },
+      {
+        id: 6,
+        hex: 'FC6B78',
+        name: 'Рожевий'
+      },
+    ],
+    oldPrice: null,
+    price: {
+      value: 57,
+      currencyCode: 'UAH'
+    }
+  },
+  {
+    ID: 3,
+    title: 'Пряжа Norway 50гр - 160м YarnArt Jeans',
+    prefered: false,
+    image: './assets/image7.png',
+    colors: [
+      {
+        id: 0,
+        hex: '1A3A8C',
+        name: 'Ультрамарин'
+      },
+      {
+        id: 1,
+        hex: '9378AE',
+        name: 'Лаванда'
+      },
+      {
+        id: 2,
+        hex: 'C48528',
+        name: 'Гірчиця'
+      },
+      {
+        id: 3,
+        hex: 'B0A081',
+        name: 'Темно-біжевий'
+      },
+      {
+        id: 4,
+        hex: 'D7BDBC',
+        name: 'Світло-рожевий'
+      },
+      {
+        id: 5,
+        hex: 'ACD1CC',
+        name: 'Світла бірюза'
+      },
+      {
+        id: 6,
+        hex: 'E4CDCD',
+        name: 'Ніжно-рожевий'
+      },
+      {
+        id: 7,
+        hex: 'D1A89D',
+        name: 'Пудровий'
+      },
+      {
+        id: 8,
+        hex: 'BA4968',
+        name: 'Темно-рожевий'
+      },
+      {
+        id: 9,
+        hex: 'ACD1CC',
+        name: 'Світла бірюза'
+      },
+      {
+        id: 10,
+        hex: 'E4CDCD',
+        name: 'Ніжно-рожевий'
+      },
+      {
+        id: 11,
+        hex: 'D1A89D',
+        name: 'Пудровий'
+      },
+      {
+        id: 12,
+        hex: 'BA4968',
+        name: 'Темно-рожевий'
+      },
+    ],
+    oldPrice: null,
+    price: {
+      value: 80,
+      currencyCode: 'UAH'
+    }
+  },
+  {
+    ID: 4,
+    title: 'Пряжа Norway 50гр - 160м YarnArt Jeans',
+    prefered: false,
+    image: './assets/image4.png',
+    colors: [
+      {
+        id: 0,
+        hex: '1A3A8C',
+        name: 'Ультрамарин'
+      },
+      {
+        id: 1,
+        hex: '9378AE',
+        name: 'Лаванда'
+      },
+      {
+        id: 2,
+        hex: 'C48528',
+        name: 'Гірчиця'
+      },
+      {
+        id: 3,
+        hex: 'B0A081',
+        name: 'Темно-біжевий'
+      },
+      {
+        id: 4,
+        hex: 'D7BDBC',
+        name: 'Світло-рожевий'
+      },
+      {
+        id: 5,
+        hex: 'ACD1CC',
+        name: 'Світла бірюза'
+      },
+      {
+        id: 6,
+        hex: 'E4CDCD',
+        name: 'Ніжно-рожевий'
+      },
+      {
+        id: 7,
+        hex: 'D1A89D',
+        name: 'Пудровий'
+      },
+      {
+        id: 8,
+        hex: 'BA4968',
+        name: 'Темно-рожевий'
+      },
+      {
+        id: 9,
+        hex: 'ACD1CC',
+        name: 'Світла бірюза'
+      },
+      {
+        id: 10,
+        hex: 'E4CDCD',
+        name: 'Ніжно-рожевий'
+      },
+      {
+        id: 11,
+        hex: 'D1A89D',
+        name: 'Пудровий'
+      },
+      {
+        id: 12,
+        hex: 'BA4968',
+        name: 'Темно-рожевий'
+      },
+    ],
+    oldPrice: {
+      value: 95
+    },
+    price: {
+      value: 72,
+      currencyCode: 'UAH'
+    }
+  },
+
 ]
 
 
 function App() {
+
+  
+
   return (
     <div className="App">
-      {Ads.map(ad => {
-        return <Ad props={ad} />
-      })}
+      <AdsBlock props={Ads} />
     </div>
   );
 }
