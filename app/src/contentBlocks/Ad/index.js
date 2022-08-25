@@ -38,7 +38,7 @@ export default class Ad extends Component {
             <div className="ad">
                 <div className="ad__btn-bar">
                     <div
-                        className={this.state.prefered ? 'ad__btn-favourite active' : 'ad__btn-favourite'}
+                        className={`ad__btn-favourite ${this.state.prefered ? 'active' : ''}`}
                         title={this.state.prefered ? "Прибрати з обраних" : "Додати в обрані"}
                         onClick={this.togglePrefered}></div>
                     <div className="ad__btn-more" title="Більше"></div>
