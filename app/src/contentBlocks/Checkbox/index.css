@@ -1,0 +1,29 @@
+input[type="checkbox"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.checkbox {
+    display: inline-block;
+    /* set to `inline-block` as `inline elements ignore `height` and `width` */
+    height: 14px;
+    width: 14px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #bdbdbd;
+    margin-right: 8px;
+}
+
+.checkbox.checked {
+    border: none;
+}
+
+.ad__filter-option-label {
+    justify-content: flex-start;
+    text-align: start;
+}

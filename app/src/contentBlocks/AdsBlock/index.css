@@ -7,8 +7,6 @@
 }
 
 .ad__sort-btn {
-    /* width: 80px;
-    height: 38px; */
     padding: 10px 16px;
     border: 1px solid #BDBDBD;
     border-radius: 46px;
@@ -19,6 +17,7 @@
     font-size: 0.875rem;
     line-height: 1.0625rem;
     color: #BDBDBD;
+    cursor: pointer;
 }
 
 .ad__sort-btn::after {

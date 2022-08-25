@@ -2,6 +2,84 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AdsBlock from './contentBlocks/AdsBlock';
 
+const Filters = [
+  {
+    id: 0,
+    title: 'Тип виробів',
+    options: [
+      {
+        id: 0,
+        title: 'Шпагат, шнури, мотузки'
+      },
+      {
+        id: 1,
+        title: 'Кільця, намистини'
+      },
+      {
+        id: 2,
+        title: 'Джут'
+      },
+    ]
+  },
+  {
+    id: 1,
+    title: 'Склад',
+    options: [
+      {
+        id: 3,
+        title: 'Бавовна'
+      },
+      {
+        id: 4,
+        title: 'Синтетика'
+      },
+      {
+        id: 5,
+        title: 'Із сердечником'
+      },
+    ]
+  },
+  {
+    id: 2,
+    title: 'Діаметр',
+    options: [
+      {
+        id: 6,
+        title: '3 мм'
+      },
+      {
+        id: 7,
+        title: '4 мм'
+      },
+      {
+        id: 8,
+        title: '4,5 мм'
+      },
+      {
+        id: 9,
+        title: '5 мм'
+      },
+    ]
+  },
+  {
+    id: 3,
+    title: 'Виробник',
+    options: [
+      {
+        id: 10,
+        title: 'Mactametr'
+      },
+      {
+        id: 11,
+        title: 'Arachna'
+      },
+      {
+        id: 12,
+        title: 'Norway'
+      },
+    ]
+  },
+]
 
 const Ads = [
   {
@@ -312,7 +390,7 @@ function App() {
 
   return (
     <div className="App">
-      <AdsBlock props={Ads} />
+      <AdsBlock ads={Ads} filters={Filters} />
     </div>
   );
 }

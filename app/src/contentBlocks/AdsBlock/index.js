@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import './index.css'
 import Ad from "../Ad";
+import SideNavBar from "../SideNavBar";
 
 export default class AdsBlock extends Component {
     constructor(props) {
         super()
         this.state = {
-            unsorted: props.props,
-            list: props.props,
-            filter: null
+            unsorted: props.ads,
+            list: props.ads,
+            sorting: null,
+            filters: props.filters
         }
         this.sortAsc = this.sortAsc.bind(this)
         this.sortDesc = this.sortDesc.bind(this)
@@ -17,8 +19,8 @@ export default class AdsBlock extends Component {
 
     sortAsc() {
         this.setState({
-            filter: this.state.filter === 'ASC' ? null : 'ASC', // toggle filter
-            list: this.state.filter !== 'ASC' ? [...this.state.list].sort((a, b) => a.price.value > b.price.value ? 1 : -1) : this.state.unsorted, // toggle sorting
+            sorting: this.state.sorting === 'ASC' ? null : 'ASC', // toggle filter
+            list: this.state.sorting !== 'ASC' ? [...this.state.list].sort((a, b) => a.price.value > b.price.value ? 1 : -1) : this.state.unsorted, // toggle sorting
         })
     }
 
@@ -37,24 +39,28 @@ export default class AdsBlock extends Component {
 
     sortDesc() {
         this.setState({
-            filter: this.state.filter === 'DESC' ? null : 'DESC', // toggle filter
-            list: this.state.filter !== 'DESC' ? [...this.state.list].sort((a, b) => a.price.value < b.price.value ? 1 : -1) : this.state.unsorted, // toggle sorting
+            sorting: this.state.sorting === 'DESC' ? null : 'DESC', // toggle filter
+            list: this.state.sorting !== 'DESC' ? [...this.state.list].sort((a, b) => a.price.value < b.price.value ? 1 : -1) : this.state.unsorted, // toggle sorting
         })
     }
 
     render() {
         return (
-            <>
-                <div className="container d-flex gap-3 justify-content-end">
-                    <div className='ad__sort-btn asc' value={this.state.filter === 'ASC'} onClick={this.sortAsc}>Ціна</div>
-                    <div className='ad__sort-btn desc' value={this.state.filter === 'DESC'} onClick={this.sortDesc}>Ціна</div>
+            <div className="container d-flex">
+                <SideNavBar props={this.state.filters} />
+
+                <div className="col-10">
+                    <div className="d-flex gap-3 justify-content-end my-3">
+                        <div className='ad__sort-btn asc' value={this.state.sorting === 'ASC'} onClick={this.sortAsc} title={this.state.sorting === 'ASC' ? 'Не сортувати' : 'Сортувати за зростанням ціни'}>Ціна</div>
+                        <div className='ad__sort-btn desc' value={this.state.sorting === 'DESC'} onClick={this.sortDesc} title={this.state.sorting === 'DESC' ? 'Не сортувати' : 'Сортувати за спаданням ціни'}>Ціна</div>
+                    </div>
+                    <div className="ad-blocck">
+                        {this.state.list.map(ad => {
+                            return <Ad props={ad} key={ad.ID} />
+                        })}
+                    </div>
                 </div>
-                <div className="ad-blocck">
-                    {this.state.list.map(ad => {
-                        return <Ad props={ad} key={ad.ID} />
-                    })}
-                </div>
-            </>
+            </div>
         )
     }
 }
