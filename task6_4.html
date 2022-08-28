@@ -3,12 +3,35 @@
 <head>
 	<meta charset=utf-8>
 	<title>Практическая работа 4</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script>
 	/** ЗАДАНИЕ 1
 		- Привяжите событие "mouseenter" к элементу <div>, при котором 
 			- цвет фона элемента <div> меняется на желтый
 			- у третьего элемента списка цвет фона меняется на красный
 	*/
+	$(function() {
+		// task 1
+		$('div').mouseenter(function() {
+			$(this).css('background-color', 'yellow')
+			$(this).find('li').eq(2).css('background-color', 'red')
+		})
+
+		// task 2
+		$('div').click(function() {
+			let list = $(this).find('ul')
+			list.fadeTo(700, 0, () => list.css('display', 'none'));
+		})
+
+		// task 3
+		$('div').mouseleave(function() {
+			let list = $(this).find('ul')
+			list.css('display', '')
+			list.fadeTo(700, 1);
+			$(this).css('background-color', '')
+			$(this).find('li').eq(2).css('background-color', '')
+		})
+	})
 	/** ЗАДАНИЕ 2
 		- Привяжите событие "click" к элементу <div>, при котором список <ul> ПЛАВНО скрывается 
 	*/
@@ -19,7 +42,7 @@
 	*/	
 	</script>
 	<style> 
-		.mylist{}
+		/* .mylist{} */
 		.container{border: 1px solid green; height:100px}
 	</style>
 	</head>
