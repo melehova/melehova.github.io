@@ -2,12 +2,17 @@ import React from "react";
 import './index.css'
 
 export default class Checkbox extends React.Component {
-    constructor({ props }) {
+    constructor({ props, disabled }) {
         super()
         this.state = {
             isChecked: false,
-            label: props.title
+            label: props.title,
+            disabled: disabled
         }
+    }
+
+    componentDidMount() {
+        this.setState({ isChecked: false })
     }
 
     render() {
@@ -16,8 +21,9 @@ export default class Checkbox extends React.Component {
                 <label className="ad__filter-option-label">
                     <input
                         type='checkbox'
-                        onChange={() =>
-                            this.setState({ isChecked: !this.state.isChecked })}>
+                        value={this.state.reload}
+                        disabled={this.state.disabled}
+                        onChange={() => this.setState({ isChecked: !this.state.isChecked })}>
                     </input>
                     <svg
                         className={`checkbox${this.state.isChecked ? ' checked' : ''}`}
@@ -35,10 +41,10 @@ export default class Checkbox extends React.Component {
                             </linearGradient>
                         </defs>
                     </svg>
-
-                    {this.state.label}
+                    <span>{this.state.label}</span>
+                    <div className="missing-functionality">Наразі функція недоступна :(</div>
                 </label>
-            </div>
+            </div >
         )
     }
 }

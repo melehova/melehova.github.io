@@ -19,6 +19,42 @@ input[type="checkbox"] {
     margin-right: 8px;
 }
 
+.missing-functionality {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    gap: 10px;
+
+    position: absolute;
+    width: 250px;
+    height: 27px;
+
+    background: #B8B8B8;
+    border-radius: 11px;
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+}
+
+.ad__filter-option-label:hover * {
+    opacity: 0;
+}
+
+.ad__filter-option-label:hover .missing-functionality {
+    opacity: 1;
+    display: flex;
+}
+
 .checkbox.checked {
     border: none;
 }
@@ -26,4 +62,5 @@ input[type="checkbox"] {
 .ad__filter-option-label {
     justify-content: flex-start;
     text-align: start;
+    position: relative;
 }
