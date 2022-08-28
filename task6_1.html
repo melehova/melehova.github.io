@@ -87,17 +87,13 @@
 
       // task 2.1
       let rows = $('table').find('tr') 
-      // for (let row of rows) {
-      //   console.log(row.css('color'))
-      // }
+
       rows.map(idx => {
         str = rows.eq(idx).find('td').eq(0).text().toLocaleLowerCase()
         let link = rows.eq(idx).find('td').eq(1).find('.doc').eq(0)
         let name = str.length ? str + '.pdf' : null
-        // console.log(link.eq(0).)
         link.attr('href', name)
         console.log(link.text('купить'))
-        // console.log(name, link)
       })
     });
 
