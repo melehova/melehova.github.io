@@ -10,8 +10,6 @@ export default class Ad extends Component {
             ...props,
             collapsedColors: props.colors.slice(0, 4),
         }
-        console.log(this.state)
-
         this.expandColors = this.expandColors.bind(this)
         this.togglePrefered = this.togglePrefered.bind(this)
 

@@ -1,4 +1,4 @@
-input[type="checkbox"] {
+input.checkbox {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -8,7 +8,7 @@ input[type="checkbox"] {
     width: 1px;
 }
 
-.checkbox {
+svg.checkbox {
     display: inline-block;
     /* set to `inline-block` as `inline elements ignore `height` and `width` */
     height: 14px;
@@ -46,16 +46,16 @@ input[type="checkbox"] {
     color: #FFFFFF;
 }
 
-.ad__filter-option-label:hover * {
+/* .ad__filter-option-label:hover * {
     opacity: 0;
 }
 
 .ad__filter-option-label:hover .missing-functionality {
     opacity: 1;
     display: flex;
-}
+} */
 
-.checkbox.checked {
+svg.checkbox.checked {
     border: none;
 }
 

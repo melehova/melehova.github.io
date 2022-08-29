@@ -105,15 +105,15 @@ class App extends React.Component {
           title: 'Склад',
           options: [
             {
-              id: 3,
+              id: 0,
               title: 'Бавовна'
             },
             {
-              id: 4,
+              id: 1,
               title: 'Синтетика'
             },
             {
-              id: 5,
+              id: 2,
               title: 'Із сердечником'
             },
           ]
@@ -123,19 +123,19 @@ class App extends React.Component {
           title: 'Діаметр',
           options: [
             {
-              id: 6,
+              id: 0,
               title: '3 мм'
             },
             {
-              id: 7,
+              id: 1,
               title: '4 мм'
             },
             {
-              id: 8,
+              id: 2,
               title: '4,5 мм'
             },
             {
-              id: 9,
+              id: 3,
               title: '5 мм'
             },
           ]
@@ -145,15 +145,15 @@ class App extends React.Component {
           title: 'Виробник',
           options: [
             {
-              id: 10,
+              id: 0,
               title: 'Mactametr'
             },
             {
-              id: 11,
+              id: 1,
               title: 'Arachna'
             },
             {
-              id: 12,
+              id: 2,
               title: 'Norway'
             },
           ]
@@ -165,6 +165,13 @@ class App extends React.Component {
           title: 'Шпагат Macrametr 4 мм, 100 ниток',
           prefered: true,
           image: './assets/image.png',
+          typeId: 0,
+          compositionId: 1,
+          diametr: {
+            value: 3,
+            unit: 'мм',
+          },
+          manufacturerId: 0,
           colors: [
             {
               id: 0,
@@ -226,6 +233,13 @@ class App extends React.Component {
           title: 'Шпагат джутовий Сібшнур 500 м',
           prefered: false,
           image: './assets/image1.png',
+          typeId: 1,
+          compositionId: 0,
+          diametr: {
+            value: 5,
+            unit: 'мм',
+          },
+          manufacturerId: 1,
           colors: [
             {
               id: 0,
@@ -257,6 +271,13 @@ class App extends React.Component {
           title: 'Пряжа Norway 100гр - 105м YarnArt',
           prefered: false,
           image: './assets/image6.png',
+          typeId: 2,
+          compositionId: 2,
+          diametr: {
+            value: 3,
+            unit: 'мм',
+          },
+          manufacturerId: 2,
           colors: [
             {
               id: 0,
@@ -305,6 +326,13 @@ class App extends React.Component {
           title: 'Пряжа Norway 50гр - 160м YarnArt Jeans',
           prefered: false,
           image: './assets/image7.png',
+          typeId: 3,
+          compositionId: 1,
+          diametr: {
+            value: 3,
+            unit: 'мм',
+          },
+          manufacturerId: 2,
           colors: [
             {
               id: 0,
@@ -383,6 +411,13 @@ class App extends React.Component {
           title: 'Пряжа Norway 50гр - 160м YarnArt Jeans',
           prefered: false,
           image: './assets/image4.png',
+          typeId: 2,
+          compositionId: 1,
+          diametr: {
+            value: 3,
+            unit: 'мм',
+          },
+          manufacturerId: 2,
           colors: [
             {
               id: 0,
@@ -458,8 +493,69 @@ class App extends React.Component {
             currencyCode: 'UAH'
           }
         },
-
-      ]
+      ],
+      features: {
+        0: [
+          {
+            id: 0,
+            name: 'Шпагат, шнури, мотузки'
+          },
+          {
+            id: 1,
+            name: 'Кільця, намистини'
+          },
+          {
+            id: 2,
+            name: 'Джут'
+          },
+        ],
+        1: [
+          {
+            id: 0,
+            name: 'Бавовна'
+          },
+          {
+            id: 1,
+            name: 'Синтетика'
+          },
+          {
+            id: 2,
+            name: 'Із сердечником'
+          },
+        ],
+        2: [
+          {
+            id: 0,
+            name: '3 мм',
+          },
+          {
+            id: 1,
+            name: '4 мм',
+          },
+          {
+            id: 2,
+            name: '4,5 мм',
+          },
+          {
+            id: 3,
+            name: '5 мм',
+          },
+        ],
+        3: [
+          {
+            id: 0,
+            name: 'Macrametr',
+          },
+          {
+            id: 1,
+            name: 'Arachna',
+          },
+          {
+            id: 2,
+            name: 'Norway',
+          },
+        ]
+      }
     }
 
   }
@@ -494,6 +590,7 @@ class App extends React.Component {
         <AdsBlock
           ads={this.state.ads}
           filters={this.state.filters}
+          features={this.state.features}
           favourites={this.state.headerProps.rightBar.favourites.amount}
           bag={this.state.headerProps.rightBar.bag.amount}
           incFavs={this.incFavs.bind(this)}

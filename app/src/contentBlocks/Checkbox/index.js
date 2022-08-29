@@ -2,13 +2,8 @@ import React from "react";
 import './index.css'
 
 export default class Checkbox extends React.Component {
-    constructor({ props, disabled }) {
+    constructor({ props }) {
         super()
-        this.state = {
-            isChecked: false,
-            label: props.title,
-            disabled: disabled
-        }
     }
     render() {
         return (
@@ -16,15 +11,15 @@ export default class Checkbox extends React.Component {
                 <label className="ad__filter-option-label">
                     <input
                         type='checkbox'
-                        value={this.state.reload}
-                        disabled={this.state.disabled}
-                        onChange={() => this.setState({ isChecked: !this.state.isChecked })}>
+                        className={`checkbox${this.props.props.isChecked ? ' checked' : ''}`}
+                        disabled={this.props.props.disabled}
+                        onChange={() => this.props.setFilterState(this.props.groupId, this.props.props.id)}>
                     </input>
                     <svg
-                        className={`checkbox${this.state.isChecked ? ' checked' : ''}`}
+                        className={`checkbox${this.props.props.isChecked ? ' checked' : ''}`}
                         width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="0.45" y="0.45" width="13.1" height="13.1" rx="2.55" stroke={this.state.isChecked ? "url(#paint0_linear_8368_2)" : 'none'} strokeWidth="0.9" />
-                        <path d="M4.33301 7L6.33301 9L9.66634 5" stroke={this.state.isChecked ? "url(#paint0_linear_8368_2)" : 'none'} strokeWidth="0.666667" strokeLinecap="round" strokeLinejoin="round" />
+                        <rect x="0.45" y="0.45" width="13.1" height="13.1" rx="2.55" stroke={this.props.props.isChecked ? "url(#paint0_linear_8368_2)" : 'none'} strokeWidth="0.9" />
+                        <path d="M4.33301 7L6.33301 9L9.66634 5" stroke={this.props.props.isChecked ? "url(#paint0_linear_8368_2)" : 'none'} strokeWidth="0.666667" strokeLinecap="round" strokeLinejoin="round" />
                         <defs>
                             <linearGradient id="paint0_linear_8368_2" x1="-3.02703" y1="-8.75" x2="17.6391" y2="-4.17483" gradientUnits="userSpaceOnUse">
                                 <stop stopColor="#976464" />
@@ -36,7 +31,7 @@ export default class Checkbox extends React.Component {
                             </linearGradient>
                         </defs>
                     </svg>
-                    <span>{this.state.label}</span>
+                    <span>{this.props.features[this.props.groupId][this.props.props.id].name}</span>
                     <div className="missing-functionality">Наразі функція недоступна :(</div>
                 </label>
             </div >

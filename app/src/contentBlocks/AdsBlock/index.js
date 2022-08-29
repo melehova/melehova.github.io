@@ -16,7 +16,9 @@ export default class AdsBlock extends Component {
         }
         this.sortAsc = this.sortAsc.bind(this)
         this.sortDesc = this.sortDesc.bind(this)
-
+        this.setFilterState = this.setFilterState.bind(this)
+        this.resetFilters = this.resetFilters.bind(this)
+        this.filterAds = this.filterAds.bind(this)
     }
 
     sortAsc() {
@@ -39,6 +41,32 @@ export default class AdsBlock extends Component {
         so the safest way is to return 1 and -1 manually
     */
 
+
+    filterAds() {
+
+    }
+
+    setFilterState(groupId, filterId) {
+        let newValue = !this.state.filters[groupId].options[filterId].isChecked
+        this.setState(prevState => {
+            let filters = { ...prevState.filters };
+            filters[groupId].options[filterId].isChecked = newValue;
+            return filters
+        })
+    }
+
+    resetFilters() {
+        this.setState(prevState => {
+            let filters = [...prevState.filters];
+            filters.forEach(group => {
+                group.options.forEach(option => {
+                    option.isChecked = false;
+                })
+            })
+            return filters
+        })
+    }
+
     sortDesc() {
         this.setState({
             sorting: this.state.sorting === 'DESC' ? null : 'DESC', // toggle filter
@@ -47,9 +75,10 @@ export default class AdsBlock extends Component {
     }
 
     render() {
+        console.log(this.state.filters)
         return (
             <div className="container d-flex">
-                <SideNavBar props={this.state.filters} />
+                <SideNavBar props={this.state.filters} setFilterState={this.setFilterState} resetFilters={this.resetFilters} features={this.props.features} />
 
                 <div className="col-10">
                     <div className="d-flex gap-3 justify-content-end my-3">
@@ -58,10 +87,10 @@ export default class AdsBlock extends Component {
                     </div>
                     <div className="ad-blocck">
                         {this.state.list.map(ad => {
-                            return <Ad props={ad} key={ad.ID} 
-                            incFavs={this.props.incFavs} 
-                            decFavs={this.props.decFavs}
-                            incBag={this.props.incBag} />
+                            return <Ad props={ad} key={ad.ID}
+                                incFavs={this.props.incFavs}
+                                decFavs={this.props.decFavs}
+                                incBag={this.props.incBag} />
                         })}
                     </div>
                 </div>

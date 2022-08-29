@@ -46,15 +46,15 @@ export default class Header extends React.Component {
                                 placeholder={this.state.rightBar.search.placeholder}></input>
                             <label htmlFor='search-input' className="nav-icon" style={{ 'backgroundImage': `url(${this.state.rightBar.search.iconName})` }}></label>
                         </div>
-                        <div className="nav-btn" tabindex="0">
+                        <div className="nav-btn" tabIndex="0">
                             <div className="nav-icon" style={{ 'backgroundImage': `url(${this.state.rightBar.signin.iconName})` }}></div>
                             {this.state.rightBar.signin.label}
                         </div>
-                        <div tabindex="0" className={`nav-btn ${this.state.rightBar.favourites.amount > 0 ? 'with-amount' : ''}`} data-amount={this.state.rightBar.favourites.amount}>
+                        <div tabIndex="0" className={`nav-btn ${this.state.rightBar.favourites.amount > 0 ? 'with-amount' : ''}`} data-amount={this.state.rightBar.favourites.amount}>
                             <div className="nav-icon" style={{ 'backgroundImage': `url(${this.state.rightBar.favourites.iconName})` }}></div>
                             {this.state.rightBar.favourites.label}
                         </div>
-                        <div tabindex="0" className={`nav-btn ${this.state.rightBar.bag.amount > 0 ? 'with-amount' : ''}`} data-amount={this.state.rightBar.bag.amount}>
+                        <div tabIndex="0" className={`nav-btn ${this.state.rightBar.bag.amount > 0 ? 'with-amount' : ''}`} data-amount={this.state.rightBar.bag.amount}>
                             <div className="nav-icon" style={{ 'backgroundImage': `url(${this.state.rightBar.bag.iconName})` }}></div>
                             {this.state.rightBar.bag.label}
                         </div>
