@@ -1,0 +1,13 @@
+h1 {
+    width: 121px;
+    padding: 0;
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 35px;
+    text-align: center;
+
+    color: #5E5C5A;
+    margin: 0 15px;
+}

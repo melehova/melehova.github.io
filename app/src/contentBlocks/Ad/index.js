@@ -10,6 +10,8 @@ export default class Ad extends Component {
             ...props,
             collapsedColors: props.colors.slice(0, 4),
         }
+        console.log(this.state)
+
         this.expandColors = this.expandColors.bind(this)
         this.togglePrefered = this.togglePrefered.bind(this)
 
@@ -29,6 +31,7 @@ export default class Ad extends Component {
     }
 
     togglePrefered() {
+        this.state.prefered ? this.props.decFavs() : this.props.incFavs()
         this.setState({ prefered: !this.state.prefered })
         /* POST data to back */
     }
@@ -61,7 +64,7 @@ export default class Ad extends Component {
                         }
                         <span className={this.state.oldPrice ? "new" : ""}>{currencyFormat(this.state.price.value, 'UAH', 'symbol')}</span></div>
                 </div>
-                <div className="ad__btn-buy">До кошика</div>
+                <div className="ad__btn-buy" onClick={this.props.incBag}>До кошика</div>
             </div>
         );
     }

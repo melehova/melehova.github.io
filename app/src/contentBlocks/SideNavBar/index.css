@@ -4,7 +4,6 @@
     line-height: 1.25rem;
     color: #424242;
     margin-bottom: 10px;
-    margin-top: 16px;
 }
 
 .ad__nav-side-bar {
@@ -13,6 +12,7 @@
     justify-content: flex-start;
     margin-right: 50px;
     gap: 16px;
+    overflow: visible;
 }
 
 .ad__filter-group {
@@ -24,6 +24,7 @@
 }
 
 .ad__filter-group+* {
+    padding-top: 16px;
     border-top: 1px solid #BDBDBD;
 }
 
@@ -66,4 +67,28 @@
     font-size: 0.875rem;
     line-height: 1.065erm;
     color: #BDBDBD;
+}
+
+.ad__nav-breadcrumbs {
+    height: 42px;
+    margin-top: 16px;
+    width: max-content;
+    gap: 8px;
+    display: flex;
+}
+
+.ad__nav-breadcrumbs a {
+    color: #424242;
+    text-decoration: none;
+}
+
+.ad__nav-breadcrumbs>div+*::before {
+    content: "";
+    height: 8px;
+    width: 16px;
+    margin-right: 8px;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(/public/assets/icons/arrow-right.svg);
 }

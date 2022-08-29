@@ -10,11 +10,6 @@ export default class Checkbox extends React.Component {
             disabled: disabled
         }
     }
-
-    componentDidMount() {
-        this.setState({ isChecked: false })
-    }
-
     render() {
         return (
             <div>

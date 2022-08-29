@@ -10,7 +10,9 @@ export default class AdsBlock extends Component {
             unsorted: props.ads,
             list: props.ads,
             sorting: null,
-            filters: props.filters
+            filters: props.filters,
+            favourites: props.favourites,
+            bag: props.bag,
         }
         this.sortAsc = this.sortAsc.bind(this)
         this.sortDesc = this.sortDesc.bind(this)
@@ -56,7 +58,10 @@ export default class AdsBlock extends Component {
                     </div>
                     <div className="ad-blocck">
                         {this.state.list.map(ad => {
-                            return <Ad props={ad} key={ad.ID} />
+                            return <Ad props={ad} key={ad.ID} 
+                            incFavs={this.props.incFavs} 
+                            decFavs={this.props.decFavs}
+                            incBag={this.props.incBag} />
                         })}
                     </div>
                 </div>
