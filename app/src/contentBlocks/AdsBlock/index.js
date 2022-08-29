@@ -7,12 +7,12 @@ export default class AdsBlock extends Component {
     constructor(props) {
         super()
         this.state = {
-            unsorted: props.ads,
             list: props.ads,
             sorting: null,
             filters: props.filters,
             favourites: props.favourites,
             bag: props.bag,
+            found: props.ads.length,
         }
         this.sortAsc = this.sortAsc.bind(this)
         this.sortDesc = this.sortDesc.bind(this)
@@ -24,7 +24,7 @@ export default class AdsBlock extends Component {
     sortAsc() {
         this.setState({
             sorting: this.state.sorting === 'ASC' ? null : 'ASC', // toggle filter
-            list: this.state.sorting !== 'ASC' ? [...this.state.list].sort((a, b) => a.price.value > b.price.value ? 1 : -1) : this.state.unsorted, // toggle sorting
+            list: this.state.sorting !== 'ASC' ? [...this.state.list].sort((a, b) => a.price.value > b.price.value ? 1 : -1) : this.props.ads, // toggle sorting
         })
     }
 
@@ -41,9 +41,22 @@ export default class AdsBlock extends Component {
         so the safest way is to return 1 and -1 manually
     */
 
-
     filterAds() {
-
+        this.setState({list: this.props.ads}) // clean list
+        let filtered = [] // filtered ads
+        this.state.filters.forEach(group => { // go through all known filters
+            let opts = group.options.filter(option => option.isChecked) // filter all checked of them
+            opts.forEach(opt => { // for each checked filter option
+                filtered = this.state.list.filter(ad => { // looking for ads with such features
+                    let p = ad.features.filter(feature => { // looking for such feature
+                        return parseInt(Object.keys(feature)[0]) === group.id && feature[parseInt(Object.keys(feature)[0])] === opt.id // feature relate its option
+                    })
+                    return p.length > 0 // if found such feature return this.ad
+                })
+                this.setState({ found: filtered.length })
+                this.setState({ list: filtered }) // update list of ads on page
+            })
+        })
     }
 
     setFilterState(groupId, filterId) {
@@ -56,6 +69,8 @@ export default class AdsBlock extends Component {
     }
 
     resetFilters() {
+        this.setState({ list: this.props.ads }) // clean filtering
+
         this.setState(prevState => {
             let filters = [...prevState.filters];
             filters.forEach(group => {
@@ -70,15 +85,14 @@ export default class AdsBlock extends Component {
     sortDesc() {
         this.setState({
             sorting: this.state.sorting === 'DESC' ? null : 'DESC', // toggle filter
-            list: this.state.sorting !== 'DESC' ? [...this.state.list].sort((a, b) => a.price.value < b.price.value ? 1 : -1) : this.state.unsorted, // toggle sorting
+            list: this.state.sorting !== 'DESC' ? [...this.state.list].sort((a, b) => a.price.value < b.price.value ? 1 : -1) : this.props.ads, // toggle sorting
         })
     }
 
     render() {
-        console.log(this.state.filters)
         return (
             <div className="container d-flex">
-                <SideNavBar props={this.state.filters} setFilterState={this.setFilterState} resetFilters={this.resetFilters} features={this.props.features} />
+                <SideNavBar props={this.state.filters} found={this.state.found} setFilterState={this.setFilterState} resetFilters={this.resetFilters} filterAds={this.filterAds} features={this.props.features} />
 
                 <div className="col-10">
                     <div className="d-flex gap-3 justify-content-end my-3">

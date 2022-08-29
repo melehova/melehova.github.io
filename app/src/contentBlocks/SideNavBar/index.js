@@ -9,7 +9,6 @@ export default class SideNavBar extends React.Component {
             props: [...props],
             disabled: '',
             features: features,
-            found: 0,
             path: [
                 {
                     id: 0,
@@ -28,7 +27,6 @@ export default class SideNavBar extends React.Component {
                 },
             ]
         }
-        // console.log(this.state.props)
         this.state.props.forEach(group => {
             group.options.forEach(option => {
                 option['isChecked'] = false
@@ -53,9 +51,9 @@ export default class SideNavBar extends React.Component {
                             })}
                         </div>)
                 })}
-                <button className="ad__filter-btn show" disabled={this.state.disabled}>Показати</button>
+                <button className="ad__filter-btn show" disabled={this.state.disabled} onClick={this.props.filterAds}>Показати</button>
                 <button className="ad__filter-btn clear" disabled={this.state.disabled} onClick={this.props.resetFilters}>Очистити</button>
-                <span className="ad__filter-found">Знайдено {this.state.found} товарів</span>
+                <span className="ad__filter-found">Знайдено {this.props.found} товарів</span>
             </div>
         )
     }

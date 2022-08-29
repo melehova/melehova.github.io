@@ -37,7 +37,7 @@ nav {
     align-items: center;
     padding: 0px;
     gap: 2%;
-    justify-content: flex-end;
+    justify-content: space-around;
     width: 45%;
 }
 
@@ -50,7 +50,7 @@ nav {
 .right-nav-bar {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
     gap: 2%;
     width: 45%;
 }

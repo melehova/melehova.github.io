@@ -165,13 +165,12 @@ class App extends React.Component {
           title: 'Шпагат Macrametr 4 мм, 100 ниток',
           prefered: true,
           image: './assets/image.png',
-          typeId: 0,
-          compositionId: 1,
-          diametr: {
-            value: 3,
-            unit: 'мм',
-          },
-          manufacturerId: 0,
+          features: [
+            { 0: 0 },
+            { 1: 1 },
+            { 2: 0 },
+            { 3: 0 }
+          ],
           colors: [
             {
               id: 0,
@@ -233,13 +232,12 @@ class App extends React.Component {
           title: 'Шпагат джутовий Сібшнур 500 м',
           prefered: false,
           image: './assets/image1.png',
-          typeId: 1,
-          compositionId: 0,
-          diametr: {
-            value: 5,
-            unit: 'мм',
-          },
-          manufacturerId: 1,
+          features: [
+            { 0: 1 },
+            { 1: 0 },
+            { 2: 3 },
+            { 3: 1 }
+          ],
           colors: [
             {
               id: 0,
@@ -271,13 +269,12 @@ class App extends React.Component {
           title: 'Пряжа Norway 100гр - 105м YarnArt',
           prefered: false,
           image: './assets/image6.png',
-          typeId: 2,
-          compositionId: 2,
-          diametr: {
-            value: 3,
-            unit: 'мм',
-          },
-          manufacturerId: 2,
+          features: [
+            { 0: 2 },
+            { 1: 2 },
+            { 2: 0 },
+            { 3: 2 }
+          ],
           colors: [
             {
               id: 0,
@@ -326,13 +323,12 @@ class App extends React.Component {
           title: 'Пряжа Norway 50гр - 160м YarnArt Jeans',
           prefered: false,
           image: './assets/image7.png',
-          typeId: 3,
-          compositionId: 1,
-          diametr: {
-            value: 3,
-            unit: 'мм',
-          },
-          manufacturerId: 2,
+          features: [
+            { 0: 3 },
+            { 1: 1 },
+            { 2: 0 },
+            { 3: 2 }
+          ],
           colors: [
             {
               id: 0,
@@ -411,13 +407,12 @@ class App extends React.Component {
           title: 'Пряжа Norway 50гр - 160м YarnArt Jeans',
           prefered: false,
           image: './assets/image4.png',
-          typeId: 2,
-          compositionId: 1,
-          diametr: {
-            value: 3,
-            unit: 'мм',
-          },
-          manufacturerId: 2,
+          features: [
+            { 0: 2 },
+            { 1: 1 },
+            { 2: 0 },
+            { 3: 2 }
+          ],
           colors: [
             {
               id: 0,
