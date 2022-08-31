@@ -34,6 +34,16 @@ export default class SideNavBar extends React.Component {
         })
     }
 
+    foundedWord() {
+        let digit = this.props.found % 10
+        if (digit === 1) 
+            return 'товар'
+        else if (digit > 1 && digit < 5)
+            return 'товари'
+        else
+            return 'товарів'
+    }
+
     render() {
         return (
             <div className="ad__nav-side-bar col-2">
@@ -53,7 +63,7 @@ export default class SideNavBar extends React.Component {
                 })}
                 <button className="ad__filter-btn show" disabled={this.state.disabled} onClick={this.props.filterAds}>Показати</button>
                 <button className="ad__filter-btn clear" disabled={this.state.disabled} onClick={this.props.resetFilters}>Очистити</button>
-                <span className="ad__filter-found">Знайдено {this.props.found} товарів</span>
+                <span className="ad__filter-found">Знайдено {this.props.found} {this.foundedWord()}</span>
             </div>
         )
     }
